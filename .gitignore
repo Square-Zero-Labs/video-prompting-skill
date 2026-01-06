@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Skill build artifacts
+dist/*.skill
+
+# Temporary scrape/extract files
+.tmp-*
+
