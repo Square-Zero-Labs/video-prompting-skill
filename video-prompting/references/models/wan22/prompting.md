@@ -70,13 +70,27 @@ Add small, observable motion anchors for stability:
 
 ## Aesthetic tags (cinematic control)
 
-Use a compact set of anchors:
+This is the **Aesthetic Control** part of the Wan 2.2 advanced formula:
+
+`Subject (Description) + Scene (Description) + Motion (Description) + Aesthetic Control + Stylization`
+
+Use a compact set of anchors (2–6 total) and keep them consistent across retries/variants to reduce drift.
+
+Common categories:
+
+- Shot size: `wide shot`, `medium shot`, `medium close-up`, `close-up`, `extreme close-up`
+- Angle/composition: `eye level`, `low angle`, `high angle`, `over-the-shoulder`, `POV`, `center composition`, `rule of thirds`, `clean single shot`
+- Lens/focus/texture: `shallow depth of field`, `deep focus`, `wide-angle lens`, `macro lens`, `soft focus`, `anamorphic bokeh`, `16mm grain`
+- Lighting: `volumetric dusk`, `neon rim light`
+- Color/tone: `teal-and-orange`, `Kodak Portra`, `warm tone`, `cold tone`, `low saturation`, `high contrast`
+- Atmosphere: `overcast`, `rainy`, `fog`, `steam`, `dust motes`
+- Emotion beats (optional): `hesitates`, `smiles`, `anxious glance`, `contemplative`
 
 - Lighting: `volumetric dusk`, `neon rim light`
 - Color: `teal-and-orange`, `Kodak Portra`
 - Lens/texture: `anamorphic bokeh`, `16mm grain`
 
-Prefer 2–5 strong anchors over long adjective lists.
+Prefer a few strong anchors over long adjective lists.
 
 ## Negative prompts
 
