@@ -12,18 +12,18 @@ Some attributes are controlled by API parameters, not prose:
 - `size`:
   - `sora-2`: `1280x720`, `720x1280`
   - `sora-2-pro`: `1280x720`, `720x1280`, `1024x1792`, `1792x1024`
-- `seconds`: `"4"`, `"8"`, `"12"` (default `"4"`)
+- `seconds`: `"10"` or `"15"`
 
 If the user asks for length or resolution, reflect it in recommended parameters in addition to writing the prompt.
 
 ## What to clarify (ask only if missing)
 
 1. Input mode: t2v vs i2v (if i2v, confirm they will provide an image)
-2. Duration: 4 / 8 / 12 seconds
+2. Duration: 10 or 15 seconds
 3. Aspect ratio / size: choose an allowed `size` above
 4. Style target: documentary / cinematic / anime / commercial / etc.
 
-Tip from the guide: the model follows instructions more reliably in shorter clips; if needed, stitch multiple 4-second clips rather than generating a longer single shot.
+Tip from the guide: the model follows instructions more reliably in shorter clips; if needed, stitch multiple 10-second clips rather than generating a longer single shot.
 
 ## Prompt anatomy that works
 
@@ -87,7 +87,7 @@ Dialogue:
 - Character B: "..."
 ```
 
-Keep dialogue short so it fits the clip: 4 seconds usually supports 1–2 brief lines; 8 seconds supports a few more; long speeches tend to desync.
+Keep dialogue short so it fits the clip: 10 seconds usually supports 2–3 brief lines; 15 seconds supports a few more; long speeches tend to desync.
 
 If the scene is silent, you can add a minimal background sound note as a rhythm cue (e.g., “distant traffic hiss”).
 
