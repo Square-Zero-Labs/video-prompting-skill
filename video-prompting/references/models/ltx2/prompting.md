@@ -3,6 +3,7 @@
 ## Overview
 
 LTX-2 responds best to story-driven prompts that flow from start to end. Use clear cinematography language, describe the scene and action sequence, and keep it readable and grounded.
+If the user asks for chaotic or fast-twisting motion, warn them about likely artifacts and suggest simpler motion.
 
 ## Required Prompt Style
 
@@ -12,7 +13,7 @@ LTX-2 responds best to story-driven prompts that flow from start to end. Use cle
 - Match detail to shot scale (closeups need more specific detail than wide shots).
 - Describe motion as a sequence (beginning -> middle -> end).
 - Prefer starting with a scene header like "INT." or "EXT." to anchor the setting.
-- When relevant, end with a short style tag (e.g., "pixar style acting and timing").
+- Name stylized aesthetics early in the prompt when relevant (e.g., "painterly," "noir," "pixar-style animation") and reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
 
 ## Key Aspects to Include
 
@@ -29,6 +30,7 @@ LTX-2 responds best to story-driven prompts that flow from start to end. Use cle
 - Keep the prompt cohesive and focused on one primary shot.
 - Be specific about camera movement and what is revealed after the move.
 - Iterate and refine; LTX-2 supports fast experimentation.
+- Warn the user when requested motion is likely to produce artifacts (e.g., chaotic or fast-twisting actions like jumping or juggling).
 
 ## What Works Well With LTX-2
 
@@ -44,7 +46,7 @@ LTX-2 responds best to story-driven prompts that flow from start to end. Use cle
 
 - Internal state labels without visual cues ("sad", "confused").
 - Readable text or logos; avoid signage or brand names.
-- Complex physics or chaotic motion (non-linear, fast-twisting actions).
+- Complex physics or chaotic motion (non-linear, fast-twisting actions like jumping or juggling).
 - Too many characters or layered actions.
 - Conflicting lighting logic unless clearly motivated.
 - Overly complicated prompts; keep it simple and add detail in later iterations.
