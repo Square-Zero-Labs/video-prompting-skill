@@ -11,6 +11,8 @@ LTX-2 responds best to story-driven prompts that flow from start to end. Use cle
 - Aim for 4 to 8 descriptive sentences.
 - Match detail to shot scale (closeups need more specific detail than wide shots).
 - Describe motion as a sequence (beginning -> middle -> end).
+- Prefer starting with a scene header like "INT." or "EXT." to anchor the setting.
+- When relevant, end with a short style tag (e.g., "pixar style acting and timing").
 
 ## Key Aspects to Include
 
