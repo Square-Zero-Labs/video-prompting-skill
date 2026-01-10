@@ -1,14 +1,19 @@
 # Video Prompting (Agent Skill)
 
-This is an Agent Skills–compatible skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), including Sora, Veo 3/3.1, Wan 2.2, and Ovi.
+This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), including LTX2, Sora, Veo 3/3.1, Wan 2.2, and Ovi.
 
-It follows the Agent Skills spec (agentskills.io): a skill is a folder with a required `SKILL.md` (YAML frontmatter + Markdown instructions), plus optional `scripts/`, `references/`, and `assets/` folders.
+It follows the Agent Skills spec (agentskills.io).
+
+## Tutorial
+
+Agent Skills walkthrough and demo of this skill:
+
+[![Agent Skills tutorial](https://img.youtube.com/vi/6T7OCqBQhSc/0.jpg)](https://youtu.be/6T7OCqBQhSc)
 
 ## Contents
 
 - `video-prompting/SKILL.md`: skill entry point and workflow
 - `video-prompting/references/models/`: model-specific prompting guides
-- `dist/video-prompting.skill`: packaged `.skill` bundle (zip), primarily for import/sharing
 
 ## Install
 
@@ -47,5 +52,3 @@ mkdir -p dist
 rm -f dist/video-prompting.skill
 zip -r dist/video-prompting.skill video-prompting -x '**/.DS_Store'
 ```
-
-Note: `$skill-creator` (Codex) is helpful for authoring/editing `SKILL.md`, but it’s not required for packaging—zipping the folder produces the `.skill` bundle.

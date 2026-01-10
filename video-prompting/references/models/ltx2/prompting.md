@@ -1,5 +1,9 @@
 # LTX-2 Prompting Guide
 
+Use this reference when the user asks for an LTX2 prompt.
+
+Source: `Prompting Guide for LTX-2`(`https://ltx.io/model/model-blog/prompting-guide-for-ltx-2`).
+
 ## Overview
 
 LTX-2 responds best to story-driven prompts that flow from start to end. Use clear cinematography language, describe the scene and action sequence, and keep it readable and grounded.
