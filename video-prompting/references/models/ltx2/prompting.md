@@ -2,7 +2,10 @@
 
 Use this reference when the user asks for an LTX2 prompt.
 
-Source: `Prompting Guide for LTX-2`(`https://ltx.io/model/model-blog/prompting-guide-for-ltx-2`).
+Sources:
+
+- Prompting Guide for LTX-2 at https://ltx.io/model/model-blog/prompting-guide-for-ltx-2.
+- Prompt Instructions in https://github.com/Lightricks/ComfyUI-LTXVideo/tree/master/system_prompts
 
 ## Overview
 
@@ -17,7 +20,8 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - Match detail to shot scale (closeups need more specific detail than wide shots).
 - Describe motion as a sequence (beginning -> middle -> end).
 - Prefer starting with a scene header like "INT." or "EXT." to anchor the setting.
-- Name stylized aesthetics early in the prompt when relevant (e.g., "painterly," "noir," "pixar-style animation") and reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
+- Name style early in the prompt (e.g., "painterly," "noir," "pixar-style animation"). Default to cinematic-realistic. For special styles reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
+- Do not include timestamps, scene cuts, or section headings. Start directly with the scene content.
 
 ## Key Aspects to Include
 
@@ -29,11 +33,30 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 6. Camera movement: how the camera moves relative to the subject.
 7. Audio and dialogue: ambient sound, music, speech; put spoken lines in quotation marks and mention language/accent if needed.
 
+## Mode-Specific Guidance
+
+### Image to Video (I2V)
+
+- Analyze the input image for subject, setting, elements, style, and mood.
+- If the user's request conflicts with the image, describe a plausible transition while preserving visual continuity.
+- Describe only what changes from the starting image; avoid re-listing established details to prevent hard cuts.
+- Use present-progressive action verbs and a chronological flow ("as," "then," "while").
+- Integrate audio throughout the scene, aligned to actions (ambient sounds, effects, speech, music when requested).
+- Describe only what is seen and heard; avoid smell, taste, or touch.
+- Format: DO NOT use phrases like "The scene opens with..." / "The video starts...". Start directly with Style (optional) and chronological scene description.
+
+### Text to Video (T2V)
+
+- Include concrete visual details (lighting, textures, setting).
+- Use present-progressive verbs and a chronological flow.
+- Integrate audio throughout the scene, aligned to actions; be specific (e.g., "soft footsteps on tile").
+- For any speech-related request, include exact quoted dialogue and voice characteristics; specify language/accent if relevant.
+- Describe only what is seen and heard; avoid smell, taste, or touch.
+
 ## For Best Results
 
 - Keep the prompt cohesive and focused on one primary shot.
 - Be specific about camera movement and what is revealed after the move.
-- Iterate and refine; LTX-2 supports fast experimentation.
 - Warn the user when requested motion is likely to produce artifacts (e.g., chaotic or fast-twisting actions like jumping or juggling).
 
 ## What Works Well With LTX-2
