@@ -53,6 +53,10 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - For any speech-related request, include exact quoted dialogue and voice characteristics; specify language/accent if relevant.
 - Describe only what is seen and heard; avoid smell, taste, or touch.
 
+### Lip Sync (Audio to Video)
+
+- Include that the person/character moves its mouth to the words.
+
 ## For Best Results
 
 - Keep the prompt cohesive and focused on one primary shot.
