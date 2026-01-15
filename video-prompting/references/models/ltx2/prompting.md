@@ -19,8 +19,9 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - Aim for 4 to 8 descriptive sentences.
 - Match detail to shot scale (closeups need more specific detail than wide shots).
 - Describe motion as a sequence (beginning -> middle -> end).
-- Prefer starting with a scene header like "INT." or "EXT." to anchor the setting.
-- Name style early in the prompt (e.g., "painterly," "noir," "pixar-style animation"). Default to cinematic-realistic. For special styles reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
+- Always put style first using the system prompt format: `Style: <style>, <rest of prompt>`. Default to cinematic-realistic when no style is specified.
+- Follow the style cue with a scene header like "INT." or "EXT." to anchor the setting.
+- For special styles, reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
 - Do not include timestamps, scene cuts, or section headings. Start directly with the scene content.
 
 ## Key Aspects to Include
@@ -43,7 +44,7 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - Use present-progressive action verbs and a chronological flow ("as," "then," "while").
 - Integrate audio throughout the scene, aligned to actions (ambient sounds, effects, speech, music when requested).
 - Describe only what is seen and heard; avoid smell, taste, or touch.
-- Format: DO NOT use phrases like "The scene opens with..." / "The video starts...". Start directly with Style (optional) and chronological scene description.
+- Format: DO NOT use phrases like "The scene opens with..." / "The video starts...". Start directly with `Style: <style>,` and chronological scene description.
 
 ### Text to Video (T2V)
 
@@ -52,6 +53,7 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - Integrate audio throughout the scene, aligned to actions; be specific (e.g., "soft footsteps on tile").
 - For any speech-related request, include exact quoted dialogue and voice characteristics; specify language/accent if relevant.
 - Describe only what is seen and heard; avoid smell, taste, or touch.
+- Format: Start directly with `Style: <style>,` and chronological scene description. Avoid "The scene opens with...".
 
 ### Lip Sync (Audio to Video)
 
