@@ -1,6 +1,6 @@
 # Video Prompting (Agent Skill)
 
-This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), including LTX2, Sora, Veo 3/3.1, Wan 2.2, and Ovi.
+This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), including LTX-2, LTX-2.3, Sora, Veo 3/3.1, Wan 2.2, and Ovi.
 
 It follows the Agent Skills spec (agentskills.io).
 
