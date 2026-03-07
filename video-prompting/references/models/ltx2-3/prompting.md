@@ -9,6 +9,18 @@ Source:
 ## Overview
 
 LTX-2.3 improves prompt understanding, motion quality, detail fidelity, audio reliability, and native portrait support. Prompting should be more direct and specific than older LTX checkpoints.
+Even with these improvements, motion direction should stay scoped to clip length so the shot remains coherent.
+
+## Duration First (required behavior)
+
+- Default to a `10-second` clip when duration is not specified.
+- Ask the user: do you want this prompt for a shorter or longer clip?
+- Scale motion complexity to duration:
+  - `<= 6 seconds`: 1 main action beat + 1 simple camera move
+  - `10 seconds` (default): 2 to 3 clear action beats + 1 camera move
+  - `> 10 seconds`: up to 4 action beats, added in clear sequence
+- Do not stack too many simultaneous motions (subject + camera + environment) in short clips.
+- Prefer fewer, readable beats over dense micro-actions.
 
 ## Core Prompting Principles
 
@@ -81,6 +93,7 @@ LTX-2.3 can maintain structure better with layered direction. You can combine:
 - Style constraints + camera direction
 
 Complexity works best when instructions are coherent and non-conflicting.
+Do not over-pack short clips; fit complexity to duration.
 
 ## Mode-Specific Guidance
 
@@ -88,7 +101,7 @@ Complexity works best when instructions are coherent and non-conflicting.
 
 - Start with scene setup and subject details.
 - Add clear spatial structure.
-- Describe actions in chronological beats.
+- Describe actions in chronological beats that fit the clip length.
 - Add camera movement only when it supports the shot.
 - Include audio cues if desired.
 
@@ -96,7 +109,7 @@ Complexity works best when instructions are coherent and non-conflicting.
 
 - Use the image as the anchor; describe what changes.
 - Focus on action verbs and camera verbs.
-- Keep motion instructions explicit and sequential.
+- Keep motion instructions explicit, sequential, and scoped to clip duration.
 - Avoid restating static visual details already fixed by the image unless they need to change.
 
 ## Recommended Prompt Structure

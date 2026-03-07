@@ -36,6 +36,7 @@ Then confirm the input mode:
 If i2v: ask the user to share the image (optional, but it will help you generate a better prompt). Use the image as an anchor according to the chosen model’s guidance (e.g., keep identity/wardrobe/composition stable; focus your text on motion/camera/what changes).
 
 If the chosen model has versions, duration constraints, or required parameters, ask the minimum questions needed to select the right format (see the model guide).
+For LTX-2.3 specifically: default to a 10-second clip when duration is missing, ask if the user wants shorter or longer, and scale motion complexity to match that duration.
 
 ### Step 2 — Load the model reference and follow its format
 
