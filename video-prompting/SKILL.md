@@ -57,6 +57,7 @@ Avoid keyword soup. Prefer a single, well-described shot unless the user explici
 ### Step 4 — Output
 
 Default: output only the final prompt text.
+Default formatting: output prompts as a single line with no line breaks unless the user explicitly requests multiline formatting.
 
 If the user asks for options: provide 2–3 distinct prompt variants, each fully self-contained and compliant with the model’s formatting.
 

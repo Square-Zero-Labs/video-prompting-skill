@@ -123,6 +123,11 @@ Write as one coherent clip:
 5. Camera movement
 6. Audio cues (optional)
 
+## Output Formatting
+
+- Return the final prompt as a single line with no line breaks by default.
+- Only use multiline formatting when the user explicitly asks for it.
+
 ## Example Rewrites (from the source guidance)
 
 - Weak: `A woman in a cafe`
