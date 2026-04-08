@@ -1,6 +1,6 @@
 ---
 name: video-prompting
-description: Draft and refine prompts for video generation models (text-to-video and image-to-video). Use when a user asks for a "video prompt" or a model-specific prompt such as Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, including requests like "text-to-video prompt", "image-to-video prompt", or "write a prompt for [model]".
+description: Draft and refine prompts for video generation models (text-to-video and image-to-video). Use when a user asks for a "video prompt" or a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, including requests like "text-to-video prompt", "image-to-video prompt", or "write a prompt for [model]".
 ---
 
 # Video Prompting
@@ -17,6 +17,7 @@ Model-specific guidance lives in `references/models/`. This file is the entry po
 - Sora (Sora 2): `references/models/sora/prompting.md`
 - Veo 3 / 3.1: `references/models/veo3/prompting.md`
 - Wan 2.2: `references/models/wan22/prompting.md`
+- Seedance 2.0: `references/models/seedance2/prompting.md`
 - LTX-2: `references/models/ltx2/prompting.md`
 - LTX-2.3: `references/models/ltx2-3/prompting.md`
 
