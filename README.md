@@ -1,6 +1,15 @@
 # Video Prompting (Agent Skill)
 
-This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), including Seedance 2.0, LTX-2, LTX-2.3, Sora, Veo 3/3.1, Wan 2.2, and Ovi.
+This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), and for creating character-sheet prompts for image models when the goal is consistent characters before image-to-video.
+
+Supported video-model guides include Seedance 2.0, LTX-2, LTX-2.3, Sora, Veo 3/3.1, Wan 2.2, and Ovi.
+
+The skill also includes a character-sheet workflow for:
+
+- reusable turnaround sheets
+- expression sheets and prop callouts
+- scene-still handoff prompts for image-to-video pipelines
+- photoreal photographic identity sheets for real-person consistency
 
 It follows the Agent Skills spec (agentskills.io).
 
@@ -14,6 +23,15 @@ Agent Skills walkthrough and demo of this skill:
 
 - `video-prompting/SKILL.md`: skill entry point and workflow
 - `video-prompting/references/models/`: model-specific prompting guides
+- `video-prompting/references/workflows/character-sheets.md`: character-sheet and identity-sheet workflow for image-model prompting
+
+## What It Covers
+
+- video prompt drafting for text-to-video and image-to-video
+- model-specific routing for supported video models
+- character-sheet prompting for consistent characters across longer projects
+- photoreal identity-sheet prompting when the user wants real-person reference photography rather than a stylized turnaround
+- recommended handoff order: character sheet -> scene still -> video prompt
 
 ## Install
 
