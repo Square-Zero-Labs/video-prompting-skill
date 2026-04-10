@@ -72,23 +72,11 @@ For character sheets: open `references/workflows/character-sheets.md` and follow
 
 ### Step 4 — Draft the prompt in the right form
 
-For video prompts, default structure (adapt to the model’s style and required sections):
+Draft the prompt using the structure and constraints from the markdown file you selected in Step 3.
 
-1. Subject(s): who/what, distinctive details
-2. Setting: where/when, lighting, mood
-3. Action progression: what changes over time (start → beat → beat → end)
-4. Camera: framing/movement only if it matters
-5. Dialogue/audio: only if the model supports it, using the model’s exact format
+For video prompts: follow the chosen model’s `prompting.md` exactly, including its preferred section order, dialogue/audio format, and any shot-structure guidance.
 
-Avoid keyword soup. Prefer a single, well-described shot unless the user explicitly wants multiple cuts/shots.
-
-For character sheets, prefer a layout-driven prompt that locks:
-
-1. Identity anchors: age range, face shape, hair, body type, silhouette
-2. Wardrobe anchors: core outfit, shoes, accessories, materials
-3. Sheet layout: front / 3/4 / side / back, expressions, pose callouts, prop callouts
-4. Render constraints: full body, same person in every panel, same outfit, same proportions
-5. Background constraints: plain studio sheet by default unless the user wants an in-world presentation board
+For character sheets: follow `references/workflows/character-sheets.md` exactly, including layout, consistency constraints, and expression-row guidance.
 
 ### Step 5 — Output
 

@@ -89,6 +89,8 @@ Optional panel set:
 - prop close-ups
 - fabric or accessory detail callouts
 
+When including an expression row, ask for clearly different emotions rather than subtle near-duplicates. Mix calm, positive, negative, and high-energy states, and explicitly include some open-mouth expressions when the character design supports it, such as speaking, laughing, barking, shouting, panting, or surprise.
+
 Photoreal identity-sheet layout option:
 
 - top row: full-body front, left profile, right profile, back view
@@ -164,11 +166,11 @@ In photoreal mode, also avoid:
 
 ### Turnaround plus expressions
 
-`Create a professional character sheet for a single [style] character. The character is [identity description]. They wear [outfit description]. Include full-body front, 3/4, side, and back views, plus a top row of expression studies showing neutral, smile, determined, worried, and surprised. The same exact character must appear in every panel with identical facial structure, hairstyle, outfit, palette, and body proportions. Clean layout, neutral background, studio lighting, production design sheet style.`
+`Create a professional character sheet for a single [style] character. The character is [identity description]. They wear [outfit description]. Include full-body front, 3/4, side, and back views, plus a top row of clearly distinct expression studies showing neutral, joy, skepticism, frustration, and surprise, with at least two expressions using an open mouth where appropriate for the character. The same exact character must appear in every panel with identical facial structure, hairstyle, outfit, palette, and body proportions. Clean layout, neutral background, studio lighting, production design sheet style.`
 
 ### Full production sheet with props
 
-`Create a detailed production character sheet for a single [style] character intended for consistent downstream image-to-video reference. The character is [identity description]. Core outfit: [outfit description]. Include full-body front, 3/4, side, and back views, an expression row, and small callout panels for [props/accessories]. Keep the exact same character design across all panels with consistent anatomy, face, hair, wardrobe, materials, and color palette. Clean presentation board, minimal neutral background, readable spacing, high detail, no environment scene.`
+`Create a detailed production character sheet for a single [style] character intended for consistent downstream image-to-video reference. The character is [identity description]. Core outfit: [outfit description]. Include full-body front, 3/4, side, and back views, an expression row with clearly varied emotions and at least two open-mouth expressions where appropriate, and small callout panels for [props/accessories]. Keep the exact same character design across all panels with consistent anatomy, face, hair, wardrobe, materials, and color palette. Clean presentation board, minimal neutral background, readable spacing, high detail, no environment scene.`
 
 ### Photoreal identity sheet from a reference image
 
