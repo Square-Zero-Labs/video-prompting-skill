@@ -15,6 +15,7 @@ Some attributes are controlled by API parameters, not prose:
 - `seconds`: `"10"` or `"15"`
 
 If the user asks for length or resolution, reflect it in recommended parameters in addition to writing the prompt.
+Do not include the model name, duration, aspect ratio, resolution, or API parameter names in the prompt text itself. Keep them only in recommended parameters when needed.
 
 ## What to clarify (ask only if missing)
 
@@ -58,6 +59,7 @@ Instead of “brightly lit room”, specify source mix and palette anchors:
 An image input can lock composition/style (character design, wardrobe, set dressing). Use the image as the first-frame anchor; the text describes what happens next.
 
 If the user is doing i2v, ask them to share the image (optional, but it will help you generate a better prompt). Use it to anchor character identity, wardrobe/props, and scene composition, then write the motion/actions that occur over time.
+Do not describe the input image in depth unless the user asks for analysis or a visible detail must change.
 
 ### Important: images of real people may require an authorized cameo
 

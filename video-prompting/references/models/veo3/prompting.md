@@ -62,6 +62,8 @@ If the user provides a short idea, expand it by adding:
 - Lighting and mood anchors
 - Audio cues (dialogue/SFX/ambient)
 
+Do not include the Veo model name/version, duration, aspect ratio, resolution, or generation settings in the final prompt text. Keep those as external parameters when needed.
+
 ## Advanced workflow: “first and last frame” transition
 
 For controlled transformations/camera moves between two endpoints:
@@ -73,3 +75,4 @@ For controlled transformations/camera moves between two endpoints:
 ## If i2v / “first frame provided”: ask to see the image (optional but helpful)
 
 If the user is doing image-to-video (or providing a starting frame), ask them to share the image (optional, but it will help you generate a better prompt). Use the image to anchor the subject identity, wardrobe/props, and the environment, then describe motion, camera, and the soundstage additions.
+Do not describe the input image in depth unless the user asks for analysis or a visible detail must change.

@@ -33,6 +33,15 @@ To add a new model later: create `references/models/<model>/prompting.md`, then 
 
 To add a new workflow later: create `references/workflows/<workflow>.md`, then add it to the Workflow Index.
 
+## Global video-prompt rules
+
+These rules apply to every video model reference:
+
+- Never include the model name, model version, duration, aspect ratio, resolution, or API/control parameter names in the final prompt text. Those are selected outside the prompt.
+- Use duration only as internal planning context for how many action beats the prompt can support.
+- If the user asks for parameters or the model requires them, provide them outside the prompt in a separate recommended-parameters line.
+- For image-to-video, treat the image as the visual anchor. Do not describe the image in depth unless the user asks for an image analysis or a detail must change. Focus the prompt on motion, camera, emotion/performance, and audio.
+
 ## Workflow
 
 ### Step 1 — Route the request
@@ -62,7 +71,7 @@ Then confirm the input mode:
 If i2v: ask the user to share the image (optional, but it will help you generate a better prompt). Use the image as an anchor according to the chosen model’s guidance (e.g., keep identity/wardrobe/composition stable; focus your text on motion/camera/what changes).
 
 If the chosen model has versions, duration constraints, or required parameters, ask the minimum questions needed to select the right format (see the model guide).
-For LTX-2.3 specifically: default to a 10-second clip when duration is missing, ask if the user wants shorter or longer, and scale motion complexity to match that duration.
+For LTX-2.3 specifically: default to 10 seconds as the external duration setting when duration is missing, ask if the user wants shorter or longer, and scale motion complexity to match that duration. Do not write the duration into the prompt itself.
 
 ### Step 3 — Load the correct reference and follow its format
 
@@ -75,6 +84,7 @@ For character sheets: open `references/workflows/character-sheets.md` and follow
 Draft the prompt using the structure and constraints from the markdown file you selected in Step 3.
 
 For video prompts: follow the chosen model’s `prompting.md` exactly, including its preferred section order, dialogue/audio format, and any shot-structure guidance.
+Before returning a video prompt, remove any prompt-internal references to model name/version, clip length, aspect ratio, resolution, or generation settings.
 
 For character sheets: follow `references/workflows/character-sheets.md` exactly, including layout, consistency constraints, and expression-row guidance.
 

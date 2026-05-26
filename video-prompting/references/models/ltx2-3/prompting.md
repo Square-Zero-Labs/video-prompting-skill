@@ -13,14 +13,15 @@ Even with these improvements, motion direction should stay scoped to clip length
 
 ## Duration First (required behavior)
 
-- Default to a `10-second` clip when duration is not specified.
-- Ask the user: do you want this prompt for a shorter or longer clip?
+- Default to `10 seconds` as the external duration setting when duration is not specified.
+- Ask the user: do you want a shorter or longer clip?
 - Scale motion complexity to duration:
   - `<= 6 seconds`: 1 main action beat + 1 simple camera move
   - `10 seconds` (default): 2 to 3 clear action beats + 1 camera move
   - `> 10 seconds`: up to 4 action beats, added in clear sequence
 - Do not stack too many simultaneous motions (subject + camera + environment) in short clips.
 - Prefer fewer, readable beats over dense micro-actions.
+- Never include the duration or the LTX-2.3 model name/version in the final prompt text. Duration is only for planning beat complexity and for external generation settings.
 
 ## Core Prompting Principles
 
@@ -110,7 +111,7 @@ Do not over-pack short clips; fit complexity to duration.
 - Use the image as the anchor; describe what changes.
 - Focus on action verbs and camera verbs.
 - Keep motion instructions explicit, sequential, and scoped to clip duration.
-- Avoid restating static visual details already fixed by the image unless they need to change.
+- Avoid restating static visual details already fixed by the image unless they need to change. Do not describe the input image in depth; write only the new motion, performance, camera, and audio directions the model should add.
 
 ## Recommended Prompt Structure
 

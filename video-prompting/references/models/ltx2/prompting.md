@@ -23,6 +23,7 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 - Follow the style cue with a scene header like "INT." or "EXT." to anchor the setting.
 - For special styles, reinforce with a short style tag at the end (e.g., "pixar style acting and timing" or "sci-fi style cinematic scene").
 - Do not include timestamps, scene cuts, or section headings. Start directly with the scene content.
+- Do not include the LTX-2 model name/version, clip duration, aspect ratio, resolution, or generation settings in the prompt text.
 
 ## Key Aspects to Include
 
@@ -40,7 +41,7 @@ If the user asks for chaotic or fast-twisting motion, warn them about likely art
 
 - Analyze the input image for subject, setting, elements, style, and mood.
 - If the user's request conflicts with the image, describe a plausible transition while preserving visual continuity.
-- Describe only what changes from the starting image; avoid re-listing established details to prevent hard cuts.
+- Describe only what changes from the starting image; avoid re-listing established details to prevent hard cuts. Do not describe the image in depth unless the user asks for analysis or a visible detail must change.
 - Use present-progressive action verbs and a chronological flow ("as," "then," "while").
 - Integrate audio throughout the scene, aligned to actions (ambient sounds, effects, speech, music when requested).
 - Describe only what is seen and heard; avoid smell, taste, or touch.

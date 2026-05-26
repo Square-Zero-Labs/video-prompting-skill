@@ -11,6 +11,7 @@ Use this reference when the user asks for an Ovi prompt (Character.AI Ovi).
    - Ovi 1.1: 5 seconds or 10 seconds
 
 If the user doesn’t specify version, ask which they’re using. If they say Ovi 1.0, do not ask 5s vs 10s.
+Use version and duration only to select external generation settings and scale prompt complexity. Do not include the Ovi model name/version, duration, aspect ratio, resolution, or generation settings in the final prompt text.
 
 ## If i2v: ask to see the image (optional but helpful)
 
@@ -19,6 +20,8 @@ If the user is doing i2v, ask them to share the starting image (optional, but it
 - Character identity/wardrobe/props
 - Setting and overall style
 - Then describe motion + camera behavior that should happen next
+
+Do not describe the input image in depth unless the user asks for analysis or a visible detail must change.
 
 ## Prompt tokens
 
@@ -45,7 +48,7 @@ Write a natural-language paragraph describing a single coherent clip:
 
 ## Official example prompts (CSVs)
 
-Use these as style anchors:
+Use these as style anchors only. Some legacy examples mention model names or clip lengths inside dialogue/prose; do not copy those details into new final prompts unless the user explicitly wants that wording as spoken dialogue.
 
 - `references/models/ovi/example_prompts/gpt_examples_t2v.csv`
 - `references/models/ovi/example_prompts/gpt_examples_i2v.csv`

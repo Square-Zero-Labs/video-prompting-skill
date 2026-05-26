@@ -131,7 +131,8 @@ If the clip should be silent except for one sound family, say that directly.
 ## Best practices
 
 - Match prompt complexity to clip length; `15 seconds` can handle 2 to 4 clear beats or a short multi-shot sequence.
-- If duration is controlled outside the prompt, do not force it into the prose; mention timing inside the prompt only when the beat structure depends on it.
+- Duration is controlled outside the prompt. Use it only to plan beat complexity; do not write the duration into the prompt prose.
+- Do not include the Seedance model name/version, duration, aspect ratio, resolution, or generation settings in the final prompt text.
 - For single-shot prompts, keep one main camera move and one main action arc.
 - For multi-shot prompts, keep the shot order explicit and coherent.
 - For multi-shot prompts, explicit labels like `Shot 1`, `Shot 2`, `Cut to close-up`, and `Final shot` are consistent with the official examples.
@@ -153,7 +154,7 @@ If the clip should be silent except for one sound family, say that directly.
 
 - Ask to see the image if the user can share it.
 - Use the image as the anchor for identity, wardrobe, scene, and style.
-- Focus your text on motion, camera, and audio changes.
+- Focus your text on motion, camera, and audio changes. Do not describe the input image in depth unless the user asks for analysis or a visible detail must change.
 
 ### Edit / extend / reference-to-video
 
@@ -197,6 +198,6 @@ Use this as an internal drafting checklist before writing the final prompt:
 
 ## Example prompts
 
-See exact official prompts in:
+See exact official prompts in the reference file below. Treat them as style anchors only; sanitize any copied pattern so the final prompt does not include model names, clip duration, aspect ratio, resolution, or generation settings.
 
 - `references/models/seedance2/example_prompts/seedance2_examples.md`

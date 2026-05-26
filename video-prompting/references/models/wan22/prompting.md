@@ -17,6 +17,8 @@ If the user says “Wan 2.2” but doesn’t specify, ask whether they’re doin
 - T2V, I2V, or TI2V
 - And whether they have a starting image (for I2V/TI2V)
 
+Use the chosen variant only to guide drafting. Do not include the Wan model name/version, variant name, duration, aspect ratio, resolution, or generation settings in the final prompt text.
+
 ## Prompt writing formulas
 
 ### Basic formula
@@ -44,6 +46,7 @@ Because subject/style are anchored by the input image, focus on:
 `Motion + Camera movement`
 
 If the user is doing I2V/TI2V, ask them to share the starting image (optional, but it will help you generate a better prompt). Use the image to anchor subject identity and style; avoid re-specifying details that are already clearly present in the image, and focus your text on what changes over time (motion + camera).
+Do not describe the input image in depth unless the user asks for analysis or a visible detail must change.
 
 ## Shot order (helps coherence)
 

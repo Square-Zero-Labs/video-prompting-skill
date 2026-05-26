@@ -8,6 +8,7 @@ Notes:
 
 - These prompts are copied from the page data rather than paraphrased.
 - The page also contains non-prompt marketing copy; that copy is omitted here.
+- When adapting these examples, remove model names, clip duration, aspect ratio, resolution, and generation settings from the final prompt text. Those belong outside the prompt.
 
 ## Immersive Audio-visual Experience
 
