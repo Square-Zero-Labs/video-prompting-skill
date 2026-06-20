@@ -1,6 +1,6 @@
 ---
 name: video-prompting
-description: Draft and refine prompts for video generation models (text-to-video and image-to-video), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
+description: Draft and refine prompts for video generation models (text-to-video, image-to-video, reference-to-video, and video editing), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, Bernini, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
 ---
 
 # Video Prompting
@@ -24,6 +24,7 @@ This file is the entry point: route to the right path, ask the minimum clarifyin
 - Seedance 2.0: `references/models/seedance2/prompting.md`
 - LTX-2: `references/models/ltx2/prompting.md`
 - LTX-2.3: `references/models/ltx2-3/prompting.md`
+- Bernini: `references/models/bernini/prompting.md`
 
 ## Workflow Index
 
@@ -63,10 +64,12 @@ If the user is asking for both, do them in this order:
 
 If the user did not name a model, ask which model they are using (or offer supported options from the Model Index).
 
-Then confirm the input mode:
+Then confirm the input mode. For most models this is:
 
 - Text-to-video (t2v), or
 - Image-to-video (i2v)
+
+For models with broader routing, such as Bernini, use that model guide's task types instead of forcing the request into only t2v/i2v. Bernini may route to source-video editing, motion-changing video editing, reference-guided editing, content insertion, or reference-to-video.
 
 If i2v: ask the user to share the image (optional, but it will help you generate a better prompt). Use the image as an anchor according to the chosen model’s guidance (e.g., keep identity/wardrobe/composition stable; focus your text on motion/camera/what changes).
 
