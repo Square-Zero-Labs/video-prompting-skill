@@ -1,6 +1,6 @@
 ---
 name: video-prompting
-description: Draft and refine prompts for video generation models (text-to-video and image-to-video), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
+description: Draft and refine prompts for video generation models (text-to-video and image-to-video), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, LTX-2.3, or LTX-2.3 Ingredients IC-LoRA, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
 ---
 
 # Video Prompting
@@ -24,6 +24,7 @@ This file is the entry point: route to the right path, ask the minimum clarifyin
 - Seedance 2.0: `references/models/seedance2/prompting.md`
 - LTX-2: `references/models/ltx2/prompting.md`
 - LTX-2.3: `references/models/ltx2-3/prompting.md`
+- LTX-2.3 Ingredients IC-LoRA / reference-sheet control: `references/models/ltx2-3-ingredients/prompting.md`
 
 ## Workflow Index
 
@@ -53,6 +54,8 @@ Decide whether the user wants:
 
 Route to the character-sheet workflow when the user wants a reusable reference sheet, turnaround, expression sheet, costume sheet, photographic identity sheet, or a consistent-character starting point for a longer image-to-video project.
 
+Route to the LTX-2.3 Ingredients IC-LoRA guide when the user names the Ingredients LoRA, asks for "ingredients" in the LTX reference-sheet sense, or needs a prompt for a supplied reference sheet containing characters, props, and/or a location. This is a video prompt path, not the generic character-sheet image prompt path.
+
 If the user is asking for both, do them in this order:
 
 1. Character sheet
@@ -71,7 +74,7 @@ Then confirm the input mode:
 If i2v: ask the user to share the image (optional, but it will help you generate a better prompt). Use the image as an anchor according to the chosen model’s guidance (e.g., keep identity/wardrobe/composition stable; focus your text on motion/camera/what changes).
 
 If the chosen model has versions, duration constraints, or required parameters, ask the minimum questions needed to select the right format (see the model guide).
-For LTX-2.3 specifically: default to 10 seconds as the external duration setting when duration is missing, ask if the user wants shorter or longer, and scale motion complexity to match that duration. Do not write the duration into the prompt itself.
+For LTX-2.3 specifically: default to 10 seconds as the external duration setting when duration is missing, ask if the user wants shorter or longer, and scale motion complexity to match that duration. Do not write the duration into the prompt itself. For LTX-2.3 Ingredients IC-LoRA, use its reference guide instead of the generic LTX-2.3 guide.
 
 ### Step 3 — Load the correct reference and follow its format
 
@@ -91,7 +94,7 @@ For character sheets: follow `references/workflows/character-sheets.md` exactly,
 ### Step 5 — Output
 
 Default: output only the final prompt text.
-Default formatting: output prompts as a single line with no line breaks unless the user explicitly requests multiline formatting.
+Default formatting: output prompts as a single line with no line breaks unless the user explicitly requests multiline formatting or the selected model guide requires labels/sections. LTX-2.3 Ingredients IC-LoRA requires the two labels `Reference sheet:` and `Generated video:`.
 
 If the user asks for options: provide 2–3 distinct prompt variants, each fully self-contained and compliant with the model’s formatting.
 
