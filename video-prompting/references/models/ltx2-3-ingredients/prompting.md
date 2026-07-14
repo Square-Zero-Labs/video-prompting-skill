@@ -75,21 +75,6 @@ Keep the generated-video section simpler than the reference-sheet section by def
 
 For dark or nighttime scenes, explicitly request readable lighting. Use phrases such as `bright cozy nighttime lighting`, `clearly lit by the warm bedside lamp and soft blue moonlight`, or `faces remain clearly visible`. Avoid making the room "very dark" unless darkness is the primary creative goal.
 
-## Recommended External Settings
-
-Keep these outside the final prompt unless the user asks for settings:
-
-- LoRA file: `ltx-2.3-22b-ic-lora-ingredients-0.9.safetensors`
-- LoRA strength: `1.4`
-- Resolution and frames: `768x448`, `121 frames`, `24 fps`
-- Reference/control input: static reference-sheet video, at least `121 frames`, matching the output resolution and frame rate
-- Inference steps: `30`
-- Guidance scale: `4.0`
-- Suggested negative prompt: `worst quality, inconsistent motion, blurry, jittery, distorted`
-
-The public fast Space uses the distilled LTX-2.3 checkpoint, 768x448, 121 frames, 24 fps, and LoRA scale 1.4.
-Use an IC-LoRA workflow that wires the reference/control input. A generic LoRA loader without the reference path will not apply reference-sheet conditioning.
-
 ## Output Format
 
 Return the final prompt as two labeled sections, exactly:
