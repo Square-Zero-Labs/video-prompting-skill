@@ -1,6 +1,6 @@
 ---
 name: video-prompting
-description: Draft and refine prompts for video generation models (text-to-video and image-to-video), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
+description: Draft and refine prompts for video generation models (including text-to-video, image/keyframe-to-video, and reference-driven generation), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as MiniMax H3, Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
 ---
 
 # Video Prompting
@@ -22,6 +22,7 @@ This file is the entry point: route to the right path, ask the minimum clarifyin
 - Veo 3 / 3.1: `references/models/veo3/prompting.md`
 - Wan 2.2: `references/models/wan22/prompting.md`
 - Seedance 2.0: `references/models/seedance2/prompting.md`
+- MiniMax H3: `references/models/minimax-h3/prompting.md`
 - LTX-2: `references/models/ltx2/prompting.md`
 - LTX-2.3: `references/models/ltx2-3/prompting.md`
 
@@ -37,8 +38,8 @@ To add a new workflow later: create `references/workflows/<workflow>.md`, then a
 
 These rules apply to every video model reference:
 
-- Never include the model name, model version, duration, aspect ratio, resolution, or API/control parameter names in the final prompt text. Those are selected outside the prompt.
-- Use duration only as internal planning context for how many action beats the prompt can support.
+- Never include the model name, model version, duration, aspect ratio, resolution, or API/control parameter names in the final prompt text unless the selected model's required prompt schema explicitly includes timing. MiniMax H3 alignment instructions and shot timestamps are such an exception.
+- Otherwise, use duration only as internal planning context for how many action beats the prompt can support.
 - If the user asks for parameters or the model requires them, provide them outside the prompt in a separate recommended-parameters line.
 - For image-to-video, treat the image as the visual anchor. Do not describe the image in depth unless the user asks for an image analysis or a detail must change. Focus the prompt on motion, camera, emotion/performance, and audio.
 
@@ -63,10 +64,9 @@ If the user is asking for both, do them in this order:
 
 If the user did not name a model, ask which model they are using (or offer supported options from the Model Index).
 
-Then confirm the input mode:
+Then confirm the input mode. Start with text-to-video (t2v) or image-to-video (i2v), and use any additional keyframe or full-reference modes supported by the selected model guide.
 
-- Text-to-video (t2v), or
-- Image-to-video (i2v)
+For MiniMax H3, distinguish T2VA, I2VA, first-and-last-frame-to-video (FL2VA), last-frame-to-video (L2VA), and full-reference mode. Ask for the effective duration when a final-frame alignment or timed cuts require it.
 
 If i2v: ask the user to share the image (optional, but it will help you generate a better prompt). Use the image as an anchor according to the chosen model’s guidance (e.g., keep identity/wardrobe/composition stable; focus your text on motion/camera/what changes).
 
@@ -84,14 +84,14 @@ For character sheets: open `references/workflows/character-sheets.md` and follow
 Draft the prompt using the structure and constraints from the markdown file you selected in Step 3.
 
 For video prompts: follow the chosen model’s `prompting.md` exactly, including its preferred section order, dialogue/audio format, and any shot-structure guidance.
-Before returning a video prompt, remove any prompt-internal references to model name/version, clip length, aspect ratio, resolution, or generation settings.
+Before returning a video prompt, remove any prompt-internal references to model name/version, clip length, aspect ratio, resolution, or generation settings except timing required by the selected model's prompt schema.
 
 For character sheets: follow `references/workflows/character-sheets.md` exactly, including layout, consistency constraints, and expression-row guidance.
 
 ### Step 5 — Output
 
 Default: output only the final prompt text.
-Default formatting: output prompts as a single line with no line breaks unless the user explicitly requests multiline formatting.
+Default formatting: output prompts as a single line with no line breaks unless the user explicitly requests multiline formatting or the selected model guide requires a structured multiline schema. MiniMax H3 is such an exception: preserve its required field names, line order, and blank-line separation.
 
 If the user asks for options: provide 2–3 distinct prompt variants, each fully self-contained and compliant with the model’s formatting.
 
