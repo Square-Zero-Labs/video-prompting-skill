@@ -94,10 +94,12 @@ non_diegetic_music:
 
 ### Define references
 
-- `<Subject N>`: Reusable visible content such as a person, object, environment, clothing, style, action, expression, or pose. Cite its source picture/video in its definition.
+- `<Subject N>`: Reusable visible content such as a person, object, environment, clothing, style, action, expression, pose, motion, or choreography. Cite its source picture/video in its definition.
 - `<Picture N>`: A concrete first frame, keyframe, last frame, edited keyframe, composition anchor, or storyboard reference. Do not define a standalone picture when it only supplies a subject.
 - `<Video N>`: A whole source video used for editing, continuation, or temporal/editing structure. Visible content extracted from it remains a `<Subject N>`.
 - `<Audio N>`: A copied or referenced audio signal, including soundtrack, voice timbre, dialogue, music style, beat, or sound texture. Do not create one merely because a reference video contains audio.
+
+When a reference video supplies motion or choreography to reproduce, adapt, or transfer, always define that motion or choreography as a `<Subject N>` sourced from the video. Use `<Video N>` in addition only when the whole source video also controls editing, continuation, timing, shot order, or other temporal structure. Do not use `<Video N>` as a substitute for the motion/choreography subject.
 
 Give each separately tracked item one definition line and keep labels stable across all sections. If audio maps to a target speaker, reuse that speaker's eventual ID in the definition, for example `<Audio 1> is the voice-timbre reference for <Subject 1> (S1).`
 
@@ -116,13 +118,13 @@ Then write one short paragraph using only labels already defined. For video edit
 
 ### Analyze retention
 
-Write one line per reference label. For visible references, use only `fully_preserved`, `partially_preserved`, `attribute_transfer`, or `weak_reference`. For audio, use only `fully_copy`, `partially_copy`, `reference`, or `weak_reference`. State the shots/role and concretely explain what is retained, changed, transferred, copied, or loosely followed.
+Write one line per reference label. For visible references, including motion or choreography subjects sourced from video, use only `fully_preserved`, `partially_preserved`, `attribute_transfer`, or `weak_reference`. For audio, use only `fully_copy`, `partially_copy`, `reference`, or `weak_reference`. State the shots/role and concretely explain what is retained, changed, transferred, copied, or loosely followed.
 
 ### Write the detailed description
 
 - Establish style in one or two sentences before `[Shot 1]`; unlike base mode, use `detailed_description`, not `integrated_multimodal_description`.
 - Follow all base shot, camera, dialogue, visible-text, and sound rules.
-- Cite reference labels naturally at first appearance and wherever their role takes effect. Describe the referenced traits, frame relationship, source-video state, or audio relationship at that moment.
+- Cite reference labels naturally at first appearance and wherever their role takes effect. For a motion/choreography subject, cite its `<Subject N>` label where the referenced movement takes effect and let the reference video supply the movement's actual timing, sequence, rhythm, body mechanics, spatial path, and performer interactions. Describe only intentional adaptations, target-subject mapping, or synchronization constraints; do not redundantly reconstruct the choreography beat by beat unless the user requests explicit changes. Describe other referenced traits, frame relationships, source-video states, or audio relationships at the moment they take effect.
 - For generation tasks, normally write 350–500 English words, while prioritizing a complete dialogue timeline and appropriate detail over mechanically meeting the range. Scale editing descriptions to source complexity.
 - Use `<Subject N> (Sx)` when a referenced subject physically vocalizes. Use `<Audio N>` without a speaker ID for words heard only inside a directly reused soundtrack/BGM. Write `[unclear]` rather than guessing unintelligible source speech.
 - State copied or referenced audio relationships in the matching audible layer: ambience/effects in `overall_soundscape`, audience-only score in `non_diegetic_music`, and dialogue/shot-synchronized audio in `detailed_description`.
