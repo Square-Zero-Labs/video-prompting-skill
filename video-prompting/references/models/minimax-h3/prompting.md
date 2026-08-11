@@ -64,6 +64,8 @@ Replace `N` with the actual final shot number and `S.SS` with the effective dura
 
 ## Sound fields
 
+When the user does not want sound, write `N/A` for both `overall_soundscape` and `non_diegetic_music`. Do not add ambience, dialogue, singing, sound effects, or music anywhere else in the prompt.
+
 Write `overall_soundscape` as one continuous paragraph of 1–4 English sentences covering ambience, physical action sounds, and non-verbal human sounds. Do not repeat dialogue, singing, or diegetic music from the timeline. Use `N/A` only when the user explicitly requests complete silence.
 
 Write `non_diegetic_music` as 1–3 English sentences describing audience-only score through instrumentation, tempo/rhythm, and dynamic development. Put music audible to characters in the timeline instead. Use `N/A` when there is no audience-only music.
