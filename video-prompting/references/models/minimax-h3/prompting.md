@@ -64,11 +64,25 @@ Replace `N` with the actual final shot number and `S.SS` with the effective dura
 
 ## Sound fields
 
-When the user does not want sound, write `N/A` for both `overall_soundscape` and `non_diegetic_music`. Do not add ambience, dialogue, singing, sound effects, or music anywhere else in the prompt.
+When the user explicitly requests complete silence, a muted video, or no audio of any kind, write `N/A` for both `overall_soundscape` and `non_diegetic_music`. Do not add ambience, dialogue, singing, sound effects, or music anywhere else in the prompt. Treat requests such as no music, no ambience, or no sound effects as layer-specific rather than as complete silence.
 
 Write `overall_soundscape` as one continuous paragraph of 1–4 English sentences covering ambience, physical action sounds, and non-verbal human sounds. Do not repeat dialogue, singing, or diegetic music from the timeline. Use `N/A` only when the user explicitly requests complete silence.
 
 Write `non_diegetic_music` as 1–3 English sentences describing audience-only score through instrumentation, tempo/rhythm, and dynamic development. Put music audible to characters in the timeline instead. Use `N/A` when there is no audience-only music.
+
+For complete silence:
+
+```text
+overall_soundscape: N/A
+non_diegetic_music: N/A
+```
+
+For no music only, retain any requested ambience and physical sounds:
+
+```text
+overall_soundscape: [requested ambience and physical sounds]
+non_diegetic_music: N/A
+```
 
 ## Full-reference output schema
 
@@ -96,12 +110,17 @@ non_diegetic_music:
 
 ### Define references
 
-- `<Subject N>`: Reusable visible content such as a person, object, environment, clothing, style, action, expression, pose, motion, or choreography. Cite its source picture/video in its definition.
+- `<Subject N>`: Reusable visible content such as a person, object, environment, clothing, style, action, expression, pose, performer/object motion, or choreography. Cite its source picture/video in its definition.
 - `<Picture N>`: A concrete first frame, keyframe, last frame, edited keyframe, composition anchor, or storyboard reference. Do not define a standalone picture when it only supplies a subject.
 - `<Video N>`: A whole source video used for editing, continuation, or temporal/editing structure. Visible content extracted from it remains a `<Subject N>`.
 - `<Audio N>`: A copied or referenced audio signal, including soundtrack, voice timbre, dialogue, music style, beat, or sound texture. Do not create one merely because a reference video contains audio.
 
-When a reference video supplies motion or choreography to reproduce, adapt, or transfer, always define that motion or choreography as a `<Subject N>` sourced from the video. Use `<Video N>` in addition only when the whole source video also controls editing, continuation, timing, shot order, or other temporal structure. Do not use `<Video N>` as a substitute for the motion/choreography subject.
+When a reference video supplies performer/object motion or choreography to reproduce, adapt, or transfer, always represent it in a `<Subject N>` definition sourced from the video. Incorporate it into the target performer/object's subject definition when it is an attribute of that subject; give it a separate subject label only when the motion or choreography must be tracked or transferred independently. Use `<Video N>` in addition when the whole source video controls editing, continuation, camera movement, cuts, editing rhythm, shot order, or other whole-video temporal structure. Treat referenced camera motion as a `<Video N>` relationship, not as a motion/choreography subject, and do not use `<Video N>` as a substitute for referenced performer/object motion.
+
+```text
+<Subject 1> is the dancer whose appearance comes from <Picture 1> and whose choreography comes from <Video 1>.
+<Video 1> provides the target video's camera movement, cuts, and pacing structure.
+```
 
 Give each separately tracked item one definition line and keep labels stable across all sections. If audio maps to a target speaker, reuse that speaker's eventual ID in the definition, for example `<Audio 1> is the voice-timbre reference for <Subject 1> (S1).`
 
