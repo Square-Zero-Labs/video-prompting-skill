@@ -108,6 +108,13 @@ non_diegetic_music:
 ...
 ```
 
+### Assess reference suitability
+
+- Prefer clean, well-lit reference footage with one unambiguous action when motion, choreography, or performance transfer is important.
+- Match framing to the transfer: use full-body source footage and a full-body target reference for body motion, and tight facial views for expression or acting transfer.
+- Prefer source and target subjects with compatible body plans and proportions; expect drift when transferring precise motion between substantially different shapes.
+- Keep this as optional asset-preparation advice outside the generated prompt. Do not insert reference-quality commentary into prompt prose or reject a usable asset; mention it only when the user asks how to improve the inputs or a clear mismatch is likely to prevent the requested transfer.
+
 ### Define references
 
 - `<Subject N>`: Reusable visible content such as a person, object, environment, clothing, style, action, expression, pose, performer/object motion, or choreography. Cite its source picture/video in its definition.
@@ -146,6 +153,7 @@ Write one line per reference label. For visible references, including motion or 
 - Establish style in one or two sentences before `[Shot 1]`; unlike base mode, use `detailed_description`, not `integrated_multimodal_description`.
 - Follow all base shot, camera, dialogue, visible-text, and sound rules.
 - Cite reference labels naturally at first appearance and wherever their role takes effect. For a motion/choreography subject, cite its `<Subject N>` label where the referenced movement takes effect and let the reference video supply the movement's actual timing, sequence, rhythm, body mechanics, spatial path, and performer interactions. Describe only intentional adaptations, target-subject mapping, or synchronization constraints; do not redundantly reconstruct the choreography beat by beat unless the user requests explicit changes. Describe other referenced traits, frame relationships, source-video states, or audio relationships at the moment they take effect.
+- For camera movement supplied by `<Video N>`, cite the video where the move takes effect and let it supply the actual path, speed, amplitude, and timing. Describe the target subject, scene, composition, and intentional adaptations; do not redundantly restate the camera move unless the user requests a change to it.
 - For generation tasks, normally write 350–500 English words, while prioritizing a complete dialogue timeline and appropriate detail over mechanically meeting the range. Scale editing descriptions to source complexity.
 - Use `<Subject N> (Sx)` when a referenced subject physically vocalizes. Use `<Audio N>` without a speaker ID for words heard only inside a directly reused soundtrack/BGM. Write `[unclear]` rather than guessing unintelligible source speech.
 - State copied or referenced audio relationships in the matching audible layer: ambience/effects in `overall_soundscape`, audience-only score in `non_diegetic_music`, and dialogue/shot-synchronized audio in `detailed_description`.
@@ -157,4 +165,6 @@ Write one line per reference label. For visible references, including motion or 
 - Include duration only in required alignment instructions and shot timestamps. Supply any other generation settings separately only if requested.
 - Ensure shot times increase and remain within the duration.
 - Ensure keyframe paths actually begin from, connect to, or land on the supplied frame as the selected mode requires.
+- Ensure every separately tracked reference label has exactly one definition, one `retention_analysis` entry, and at least one use where its role takes effect. Remove inactive labels and resolve conflicting roles without changing a label's meaning between sections.
+- Allow a source-only picture or video citation to appear inside another item's definition without its own standalone definition or retention entry; do not mistake that compact source citation for an unresolved label.
 - Preserve dialogue, lyrics, and visible text exactly in their original language; write all other content in English.
