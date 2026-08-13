@@ -1,6 +1,6 @@
 ---
 name: video-prompting
-description: Draft and refine prompts for video generation models (including text-to-video, image/keyframe-to-video, and reference-driven generation), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as MiniMax H3, Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
+description: Draft and refine prompts for video generation models (including text-to-video, image/keyframe-to-video, and reference-driven generation), and create character-sheet prompts for image models when the goal is character consistency before image-to-video. Use when a user asks for a "video prompt", a model-specific prompt such as MiniMax H3, Seedance 2.0, Ovi, Sora, Veo 3, Wan 2.2, Wan Animate 2, LTX-2, or LTX-2.3, or a consistent-character prompt such as "character sheet prompt", "character turnaround", "character reference sheet", or "photographic identity sheet".
 ---
 
 # Video Prompting
@@ -21,6 +21,7 @@ This file is the entry point: route to the right path, ask the minimum clarifyin
 - Sora (Sora 2): `references/models/sora/prompting.md`
 - Veo 3 / 3.1: `references/models/veo3/prompting.md`
 - Wan 2.2: `references/models/wan22/prompting.md`
+- Wan Animate 2: `references/models/wan-animate-2/prompting.md`
 - Seedance 2.0: `references/models/seedance2/prompting.md`
 - MiniMax H3: `references/models/minimax-h3/prompting.md`
 - LTX-2: `references/models/ltx2/prompting.md`
