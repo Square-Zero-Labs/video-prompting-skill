@@ -11,7 +11,11 @@ The skill also includes a character-sheet workflow for:
 - scene-still handoff prompts for image-to-video pipelines
 - photoreal photographic identity sheets for real-person consistency
 
-It follows the Agent Skills spec (agentskills.io).
+
+## ✍️ Example Prompt
+
+> **Use the video prompting skill to create a prompt for MiniMax H3 in which ....**
+
 
 ## Tutorial
 
@@ -35,6 +39,12 @@ Agent Skills walkthrough and demo of this skill:
 - recommended handoff order: character sheet -> scene still -> video prompt
 
 ## Install
+
+### Easy / Lazy Install
+
+Just give this repository link to your favorite AI agent and ask it to use the skill:
+
+https://github.com/Square-Zero-Labs/video-prompting-skill
 
 ### Claude
 
