@@ -2,7 +2,7 @@
 
 This is an Agent Skill for drafting and refining prompts for video generation models (text-to-video and image-to-video), and for creating character-sheet prompts for image models when the goal is consistent characters before image-to-video.
 
-Supported video-model guides include MiniMax H3, Seedance 2.0, Seedance 2.5, LTX-2, LTX-2.3, Sora, Veo 3/3.1, Wan 2.2, Wan Animate 2, and Ovi.
+Supported video-model guides include MiniMax H3, Seedance 2.0, Seedance 2.5, LTX-2, LTX-2.3, LTX-2.5, Sora, Veo 3/3.1, Wan 2.2, Wan Animate 2, and Ovi.
 
 The skill also includes a character-sheet workflow for:
 
