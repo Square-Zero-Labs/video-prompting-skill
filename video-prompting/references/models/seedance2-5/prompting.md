@@ -134,6 +134,8 @@ Use audio primarily for:
 - music rhythm
 - ambience or sound design
 
+When a supplied audio reference contains the dialogue that should be spoken in the scene, treat that audio as the sole source of the spoken content. Do not quote, transcribe, summarize, or paraphrase its words anywhere in the prompt. Instead, direct the named speaker to perform or lip-sync the dialogue from the indexed audio reference, preserving its wording, timing, voice, and delivery. State that the model must not generate replacement or additional speech.
+
 Name both the desired transfer and the forbidden transfer:
 
 `@Image1 controls only the product geometry, materials, and color. Do not copy its background, pose, lighting, text, or camera angle.`
@@ -163,7 +165,9 @@ Prefer one motivated camera idea per beat. For a continuous take, describe a phy
 
 Block acting into observable actions, gaze, pauses, breath, and restrained facial changes. Avoid vague emotional labels when a performance note can show the emotion.
 
-Put exact spoken lines in straight double quotes. State who speaks, when the line begins and ends, what the speaker does before and after it, and who stays silent. Keep dialogue short enough for the allocated time. Use a dedicated block for an important line rather than stacking complex movement over it.
+When dialogue must be generated from text, put exact spoken lines in straight double quotes. State who speaks, when the line begins and ends, what the speaker does before and after it, and who stays silent. Keep dialogue short enough for the allocated time. Use a dedicated block for an important line rather than stacking complex movement over it.
+
+When supplied audio already contains what should be said, never include those words in the prompt, even if the user provides a transcript. Refer only to the indexed audio asset, for example: `The woman lip-syncs the dialogue from @Audio1 exactly, matching its timing and delivery; @Audio1 is the sole dialogue track, with no generated replacement or additional speech.`
 
 ### Physical motion
 
@@ -283,7 +287,8 @@ Before returning the prompt, verify:
 - Assign each reference one job and exclude unwanted transfers.
 - Give the camera composition, motivation, and stopping point.
 - Preserve essential identity, wardrobe, props, counts, directions, and object ownership.
-- Give dialogue a speaker, quoted line, time allocation, and performance.
+- For text-generated dialogue, give the dialogue a speaker, quoted line, time allocation, and performance.
+- For supplied dialogue audio, omit its spoken text and refer only to the indexed audio as the sole source of wording, timing, voice, and delivery; prohibit replacement or additional speech.
 - Give fluids, fabric, particles, and impacts a settling state.
 - Define the exact ending frame or continuation state.
 - Use only targeted negative constraints.
