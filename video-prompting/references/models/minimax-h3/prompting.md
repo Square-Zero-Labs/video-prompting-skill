@@ -53,6 +53,20 @@ Replace `N` with the actual final shot number and `S.SS` with the effective dura
 - **FL2VA**: Prefer one continuous shot unless the user specifies cuts. Describe observable intermediate changes that close the gap between Picture 1 and Picture 2; land exactly on Picture 2 at the end.
 - **L2VA**: Infer a compatible preceding state, then explicitly converge character pose, objects, camera, lighting, and composition on Picture 1 in the final shot.
 
+## Motion graphics trailers
+
+For fast motion-graphics trailers, treat the prompt as a compact audiovisual style bible followed by a precisely timed edit:
+
+- Establish the global design system at the start of `[Shot 1]`: animation medium, line and shape language, rendering treatment, palette (including exact color values when supplied), tonal qualities, and exclusions. Keep those rules active across every shot instead of restating the whole style block.
+- Define the hero, product, mascot, or brand device with stable identifying traits before the action. Reassert only the traits at risk during silhouettes, duplicates, transformations, extreme poses, or rapid cuts.
+- Give each shot one legible graphic beat, such as an entrance, transformation, panel montage, emblem reveal, kinetic-type composition, or final lockup. Describe the incoming composition, the subject action, the graphic response, and the camera behavior in that order.
+- Timestamp every cut and synchronize shape snaps, wipes, typography, impacts, lens or logo reveals, and musical accents to the visual action. A regular cut cadence is acceptable when it is an intentional part of the trailer's rhythm.
+- Treat visible typography as a whitelist. Quote the exact allowed letters or words and explicitly forbid all other readable text when brand fidelity requires it.
+- Describe potentially ambiguous motifs by their unmistakable visual construction. For example, define a photographic lens through curved glass, concentric optics, and aperture blades, then exclude reticles or targeting marks when those would create the wrong reading.
+- Keep `overall_soundscape` focused on shot-synchronized whooshes, impacts, mechanical cues, character sounds, and transition effects. Use `non_diegetic_music` to define the trailer's rhythmic engine, instrumentation, build, and final hit.
+
+Use the complete T2VA example at `references/models/minimax-h3/example_prompts/motion_graphics_trailer.md` as a pattern for a tightly art-directed, high-shot-count character trailer. Adapt its structure and level of control; do not copy its character, palette, branding, timings, or sound design unless the user requests them.
+
 ## Dialogue, singing, and visible text
 
 - Assign stable speaker IDs `(S1)`, `(S2)`, and so on in order of first vocal event. Do not assign IDs to silent characters. Use `(S1,S2)` for speakers vocalizing together.
