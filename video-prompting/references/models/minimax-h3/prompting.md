@@ -47,6 +47,34 @@ Replace `N` with the actual final shot number and `S.SS` with the effective dura
 - Express camera movement naturally in the shot. Choose a motion type such as push/pull, zoom, pan, truck, tilt, pedestal, arc, tracking, static, shake, POV, or roll; add `with small/large amplitude` and `at slow/fast speed` only when meaningful.
 - Keep every visual and audio event observable and chronological. Establish identities, positions, environment, lighting, actions, reactions, state changes, and synchronized diegetic sounds.
 
+### Match action complexity to duration
+
+Keep prompts visually detailed, but ensure the number of
+requested actions is achievable within the video duration.
+
+- Allow enough time for actions, transitions, and reactions
+  to be clearly shown.
+- Distinguish useful descriptive detail from additional
+  actions the model must perform.
+- Prioritize essential actions over secondary gestures,
+  unnecessary cuts, and decorative movement.
+- When the timeline is overloaded, simplify the action
+  sequence or recommend separate clips rather than
+  compressing everything into the available time.
+- If a generation misses actions or becomes confused,
+  first consider reducing competing actions before
+  adding more instructions.
+
+For silent scenes, avoid quoted character thoughts or
+imagined dialogue, which MiniMax may turn into speech.
+Describe expressions through observable movements instead.
+
+Clarify who performs important physical actions and
+what objects or environmental details must remain unchanged.
+
+The goal is precise, executable direction—not maximum
+prompt length or minimum prompt length.
+
 ### Handle keyframes
 
 - **I2VA**: Preserve Picture 1's identity, clothing, colors, objects, composition, and spatial relationships. Write the path as first-frame anchor → action onset → continuous development → result/reaction.
@@ -168,7 +196,7 @@ Write one line per reference label. For visible references, including motion or 
 - Follow all base shot, camera, dialogue, visible-text, and sound rules.
 - Cite reference labels naturally at first appearance and wherever their role takes effect. For a motion/choreography subject, cite its `<Subject N>` label where the referenced movement takes effect and let the reference video supply the movement's actual timing, sequence, rhythm, body mechanics, spatial path, and performer interactions. Describe only intentional adaptations, target-subject mapping, or synchronization constraints; do not redundantly reconstruct the choreography beat by beat unless the user requests explicit changes. Describe other referenced traits, frame relationships, source-video states, or audio relationships at the moment they take effect.
 - For camera movement supplied by `<Video N>`, cite the video where the move takes effect and let it supply the actual path, speed, amplitude, and timing. Describe the target subject, scene, composition, and intentional adaptations; do not redundantly restate the camera move unless the user requests a change to it.
-- For generation tasks, normally write 350–500 English words, while prioritizing a complete dialogue timeline and appropriate detail over mechanically meeting the range. Scale editing descriptions to source complexity.
+- For generation tasks, provide sufficient detail to clearly control subjects, actions, camera, style, and continuity. Do not target a fixed word count. Scale action complexity to the available duration, while keeping descriptions as detailed as the scene requires. Avoid adding actions or instructions merely to increase prompt length.
 - Use `<Subject N> (Sx)` when a referenced subject physically vocalizes. Use `<Audio N>` without a speaker ID for words heard only inside a directly reused soundtrack/BGM. Write `[unclear]` rather than guessing unintelligible source speech.
 - State copied or referenced audio relationships in the matching audible layer: ambience/effects in `overall_soundscape`, audience-only score in `non_diegetic_music`, and dialogue/shot-synchronized audio in `detailed_description`.
 
