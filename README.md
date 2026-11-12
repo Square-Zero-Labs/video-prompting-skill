@@ -11,17 +11,19 @@ The skill also includes a character-sheet workflow for:
 - scene-still handoff prompts for image-to-video pipelines
 - photoreal photographic identity sheets for real-person consistency
 
-
 ## ✍️ Example Prompt
 
 > **Use the video prompting skill to create a prompt for MiniMax H3 in which ....**
 
-
 ## Tutorial
 
-Agent Skills walkthrough and demo of this skill:
+Demo of this skill:
 
-[![Agent Skills tutorial](https://img.youtube.com/vi/6T7OCqBQhSc/0.jpg)](https://youtu.be/6T7OCqBQhSc)
+[![Agent Skills tutorial](https://img.youtube.com/vi/b_7a8GDbU3k/0.jpg)](https://youtu.be/b_7a8GDbU3k?si=24PaBaLhCuK9k10I&t=75)
+
+## 🛠️ Related Tools
+
+👉 Free tools for preparing assets and refining generated clips, including video background removal, frame interpolation, voice conversion and masking are available at [Fuzz Puppy](https://fuzzpuppy.com).
 
 ## Contents
 
